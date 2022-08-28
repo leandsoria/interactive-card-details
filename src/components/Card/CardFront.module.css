@@ -1,0 +1,51 @@
+.main-container {
+  max-width: 447px;
+  max-height: 245px;
+  position: relative;
+}
+.card-info {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+}
+
+.card-circles {
+  display: flex;
+  flex-direction: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.fullfiled-circle {
+  height: 45px;
+  width: 45px;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.empty-circle {
+  height: 20px;
+  width: 20px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.card-number,
+.name,
+.due-date {
+  color: #fff;
+  text-transform: uppercase;
+}
+.card-number {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.last-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 377px;
+}

@@ -1,0 +1,12 @@
+.main-container {
+  max-width: 447px;
+  max-height: 245px;
+  position: relative;
+}
+.card-pin {
+  position: absolute;
+  font-size: 22px;
+  top: 109px;
+  right: 55px;
+  color: #fff;
+}
