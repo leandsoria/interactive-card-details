@@ -1,13 +1,10 @@
 import classes from './Form.module.css';
-import { useState, useContext, useEffect } from 'react';
-import DataContext from '../../store/data-context';
+import { useState, useEffect } from 'react';
 
-const Form = (props) => {
+const Form = ({ pullData }) => {
   const submitForm = (e) => {
     e.preventDefault();
   };
-
-  const ctx = useContext(DataContext);
 
   const [cardName, setCardName] = useState('');
   const [cardNumber, setCardNumber] = useState('');
@@ -15,7 +12,19 @@ const Form = (props) => {
   const [yearValue, setYearValue] = useState('');
   const [pinValue, setPinValue] = useState('');
 
-  const cardNameHander = (event) => {
+  useEffect(() => {
+    const data = {
+      cardName,
+      cardNumber,
+      monthValue,
+      yearValue,
+      pinValue,
+    };
+    pullData(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cardName, cardNumber, monthValue, yearValue, pinValue]);
+
+  const cardNameHandler = (event) => {
     setCardName(event.target.value);
   };
 
@@ -33,25 +42,25 @@ const Form = (props) => {
   };
 
   const monthHandler = (event) => {
-    setMonthValue(event.target.value);
+    if (event.target.value.match(/^[0-9]{0,2}$/)) {
+      setMonthValue(event.target.value);
+    }
+    return;
   };
 
   const yearHandler = (event) => {
-    setYearValue(event.target.value);
+    if (event.target.value.match(/^[0-9`]{0,2}$/)) {
+      setYearValue(event.target.value);
+    }
+    return;
   };
 
   const pinHandler = (event) => {
-    setPinValue(event.target.value);
+    if (event.target.value.match(/^[0-9]{0,3}$/)) {
+      setPinValue(event.target.value);
+    }
+    return;
   };
-
-  useEffect(() => {
-    ctx.updateNameHandler(cardName);
-    ctx.cardNumber = cardNumber;
-    ctx.pin = pinValue;
-    ctx.dueDate = `${monthValue}/${yearValue}`;
-    console.log(ctx);
-    console.log(ctx.cardNumber);
-  }, [cardName, cardNumber, monthValue, yearValue, pinValue, ctx]);
 
   return (
     <form onSubmit={submitForm} className={classes.form}>
@@ -63,7 +72,7 @@ const Form = (props) => {
         type="name"
         placeholder="e.g. Jane Appleseed"
         value={cardName}
-        onChange={cardNameHander}
+        onChange={cardNameHandler}
         className={classes.input}
       />
       <label htmlFor="card-number" className={classes.label}>
@@ -90,6 +99,8 @@ const Form = (props) => {
             className={classes.input}
             value={monthValue}
             onChange={monthHandler}
+            maxLength="2"
+            max="12"
           />
           <input
             type="tel"
@@ -98,6 +109,8 @@ const Form = (props) => {
             className={classes.input}
             value={yearValue}
             onChange={yearHandler}
+            maxLength="2"
+            max="99"
           />
         </div>
         <div className={classes['col-2']}>
@@ -111,6 +124,7 @@ const Form = (props) => {
             className={classes.input}
             value={pinValue}
             onChange={pinHandler}
+            maxLength="3"
           />
         </div>
       </div>

@@ -4,23 +4,20 @@ import CardFront from './Card/CardFront';
 import CardBack from './Card/CardBack';
 import Form from './Form/Form';
 
-const DUMMY_DATA = {
-  name: 'Jane Appleseed',
-  cardNumber: 1234432112344321,
-  dueDate: '10/23',
-  pin: 999,
-};
+import { useState } from 'react';
 
-const MainInterface = (props) => {
+const MainInterface = () => {
+  const [cardInfo, setCardInfo] = useState({});
+
   const cardInfoHandler = (data) => {
-    console.log(data);
+    setCardInfo(data);
   };
 
   return (
     <main className={classes['main-col']}>
       <div className={classes['col-1']}>
-        <CardFront data={DUMMY_DATA} />
-        <CardBack data={DUMMY_DATA} />
+        <CardFront data={cardInfo} />
+        <CardBack data={cardInfo} />
       </div>
       <div className={classes['col-2']}>
         <Form pullData={cardInfoHandler} />
