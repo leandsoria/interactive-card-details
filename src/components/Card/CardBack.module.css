@@ -2,6 +2,8 @@
   max-width: 447px;
   max-height: 245px;
   position: relative;
+  margin-top: 40px;
+  margin-left: 50%;
 }
 .card-pin {
   position: absolute;
@@ -9,4 +11,51 @@
   top: 109px;
   right: 55px;
   color: #fff;
+}
+@media (max-width: 1400px) {
+  .main-container {
+    margin-left: 40%;
+  }
+}
+@media (max-width: 1250px) {
+  .main-container {
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main-container {
+    margin-left: 100px;
+    margin-top: unset;
+  }
+}
+@media (max-width: 600px) {
+  .main-container {
+    margin-left: unset;
+  }
+
+  .img {
+    max-width: 375px;
+  }
+  .card-pin {
+    font-size: 18px;
+    top: 92px;
+    right: 50px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 465px) {
+  .img {
+    max-width: 275px;
+    position: relative;
+    z-index: 1;
+  }
+  .card-pin {
+    font-size: 14px;
+    top: 67px;
+    right: 45px;
+    color: #fff;
+    z-index: 1;
+  }
 }

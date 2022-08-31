@@ -1,6 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 400px;
   position: absolute;
 }
@@ -10,6 +11,7 @@
   font-size: 16px;
   color: #21092f;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .input {
@@ -17,8 +19,27 @@
   border-radius: 5px;
   padding: 8px 14px;
   font-size: 18px;
+  transition: border-color 0.2s;
 }
 
+.wrong {
+  border-color: rgb(222, 65, 65);
+}
+.wrongLabel {
+  color: rgb(222, 65, 65);
+  font-size: 12px;
+  font-weight: 600;
+  bottom: 0;
+  margin: 10px 0 25px;
+  width: 100%;
+  opacity: 0;
+  font-size: 0;
+  transition: font-size 0.3s, opacity 0.3s;
+}
+.show {
+  font-size: 12px;
+  opacity: 1;
+}
 .input:focus,
 .input:active {
   outline: unset;
@@ -40,7 +61,7 @@
 .group .col-1 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  column-gap: 20px;
 }
 .group .col-1 .label {
   width: 100%;
@@ -50,12 +71,16 @@
 }
 
 .group .col-2 .input {
+  display: flex;
+  flex-wrap: wrap;
   max-width: 100%;
+  margin-top: 10px;
 }
 
 .btn {
   margin-top: 20px;
   background-color: #21092f;
+  border: unset;
   color: #fff;
   font-size: 20px;
   border-radius: 7px;
@@ -70,4 +95,43 @@
 .btn:active {
   transform: scale(0.97);
   outline: unset;
+}
+
+@media (max-width: 600px) {
+  .form {
+    padding: 0 25px;
+    top: 150px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+  .wrongLabel {
+    margin-bottom: 15px;
+  }
+  .show {
+    font-size: 12px;
+  }
+  .group {
+    flex-direction: column;
+  }
+  .group .col-1,
+  .group .col-2 {
+    width: 100%;
+  }
+  .group .col-1 {
+    flex-wrap: wrap;
+    column-gap: 0px;
+    justify-content: space-between;
+  }
+  .group .col-1 .input {
+    max-width: 47%;
+  }
+  .group .col-2 .input {
+    width: 100%;
+  }
 }

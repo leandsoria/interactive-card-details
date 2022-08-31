@@ -19,8 +19,47 @@
 }
 
 .col-2 {
-  flex: 60%;
   display: flex;
   justify-content: center;
   padding-top: 200px;
+  background-color: #fff;
+  flex: 60%;
+}
+
+@media (max-width: 1080px) {
+  .main-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .col-1 {
+    flex: unset;
+    height: 40%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 40px;
+  }
+  .col-2 {
+    flex: unset;
+    padding-top: 20px;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .col-1 {
+    height: 35%;
+  }
+  .col-2 {
+    position: relative;
+  }
+}
+
+@media (max-width: 465px) {
+  .col-1 {
+    height: 250px;
+  }
 }

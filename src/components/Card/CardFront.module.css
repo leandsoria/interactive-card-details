@@ -2,6 +2,8 @@
   max-width: 447px;
   max-height: 245px;
   position: relative;
+  margin-top: 30%;
+  margin-left: 30%;
 }
 .card-info {
   position: absolute;
@@ -48,4 +50,103 @@
   flex-direction: row;
   justify-content: space-between;
   width: 377px;
+}
+
+@media (max-width: 1400px) {
+  .main-container {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+}
+@media (max-width: 1250px) {
+  .main-container {
+    margin-left: 10%;
+  }
+}
+@media (max-width: 1080px) {
+  .main-container {
+    margin-top: 0;
+    margin-left: 0%;
+    position: absolute;
+    top: 178px;
+    right: 55%;
+    transform: translateX(50%);
+    z-index: 2;
+  }
+}
+@media (max-width: 600px) {
+  .main-container {
+    top: 185px;
+    right: 51%;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .img {
+    width: 100%;
+    max-width: 375px;
+  }
+
+  .card-circles {
+    margin-bottom: 40px;
+  }
+
+  .fullfiled-circle {
+    height: 45px;
+    width: 45px;
+  }
+  .empty-circle {
+    height: 15px;
+    width: 15px;
+  }
+  .card-number {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+
+  .last-row {
+    width: 100%;
+  }
+}
+
+@media (max-width: 465px) {
+  .card-info {
+    top: 20px;
+  }
+  .main-container {
+    top: 145px;
+    right: 51%;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .img {
+    max-width: 275px;
+  }
+
+  .card-circles {
+    margin-bottom: 30px;
+  }
+
+  .fullfiled-circle {
+    height: 35px;
+    width: 35px;
+  }
+  .empty-circle {
+    height: 15px;
+    width: 15px;
+  }
+  .card-number {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .last-row {
+    font-size: 16px;
+    width: 100%;
+  }
+  .name,
+  .due-date {
+    font-size: 12px;
+  }
 }
