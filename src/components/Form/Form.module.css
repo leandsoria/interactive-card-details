@@ -26,7 +26,7 @@
 }
 
 .wrong {
-  border-color: rgb(222, 65, 65);
+  border-color: rgb(222, 65, 65) !important;
 }
 .wrongLabel {
   color: rgb(222, 65, 65);
