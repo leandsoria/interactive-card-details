@@ -21,6 +21,9 @@
   font-size: 18px;
   transition: border-color 0.2s;
 }
+.input:focus {
+  border-color: #6222c4;
+}
 
 .wrong {
   border-color: rgb(222, 65, 65);
@@ -33,7 +36,6 @@
   margin: 10px 0 25px;
   width: 100%;
   opacity: 0;
-  font-size: 0;
   transition: font-size 0.3s, opacity 0.3s;
 }
 .show {

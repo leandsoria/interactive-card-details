@@ -30,6 +30,8 @@
   .main-col {
     display: flex;
     flex-direction: column;
+    height: max-content;
+    margin-bottom: 100px;
   }
   .col-1 {
     flex: unset;
@@ -40,9 +42,10 @@
     padding: 40px;
   }
   .col-2 {
+    position: relative;
     flex: unset;
     padding-top: 20px;
-    height: 60%;
+    height: 600px;
     display: flex;
     align-items: center;
     width: 100%;
